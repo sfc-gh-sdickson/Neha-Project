@@ -45,12 +45,12 @@
   
   <!-- Phase 3: Feature Engineering & Scoring -->
   <g id="phase3">
-    <rect x="600" y="460" width="250" height="120" fill="#E3F2FD" stroke="#1A73E8" stroke-width="2" rx="5"/>
-    <text x="725" y="485" font-size="16" font-weight="bold" text-anchor="middle" fill="#1A73E8">Phase 3: Scoring</text>
-    <text x="725" y="510" font-size="13" text-anchor="middle" fill="#333">✅ Native Snowflake SQL</text>
-    <text x="725" y="530" font-size="12" text-anchor="middle" fill="#666">• Calculate 25+ features</text>
-    <text x="725" y="545" font-size="12" text-anchor="middle" fill="#666">• Apply FERN model</text>
-    <text x="725" y="560" font-size="12" text-anchor="middle" fill="#666">• Cluster matches</text>
+    <rect x="325" y="460" width="250" height="120" fill="#E3F2FD" stroke="#1A73E8" stroke-width="2" rx="5"/>
+    <text x="450" y="485" font-size="16" font-weight="bold" text-anchor="middle" fill="#1A73E8">Phase 3: Scoring</text>
+    <text x="450" y="510" font-size="13" text-anchor="middle" fill="#333">✅ Native Snowflake SQL</text>
+    <text x="450" y="530" font-size="12" text-anchor="middle" fill="#666">• Calculate 25+ features</text>
+    <text x="450" y="545" font-size="12" text-anchor="middle" fill="#666">• Apply FERN model</text>
+    <text x="450" y="560" font-size="12" text-anchor="middle" fill="#666">• Cluster matches</text>
   </g>
   
   <!-- Data flow annotation -->
