@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Title -->
+  <text x="400" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Estimated Cost Breakdown (500K Records)</text>
+  
+  <!-- Current Approach -->
+  <g id="current-costs">
+    <rect x="50" y="60" width="300" height="280" fill="#FFEBEE" stroke="#D32F2F" stroke-width="2" rx="5"/>
+    <text x="200" y="90" font-size="15" font-weight="bold" text-anchor="middle" fill="#D32F2F">Current Approach</text>
+    
+    <rect x="70" y="110" width="260" height="50" fill="#FFCDD2" stroke="#D32F2F" stroke-width="1" rx="3"/>
+    <text x="90" y="130" font-size="12" fill="#333">Warehouse (14 hours)</text>
+    <text x="310" y="130" font-size="13" font-weight="bold" text-anchor="end" fill="#333">$112</text>
+    <text x="200" y="148" font-size="10" text-anchor="middle" fill="#666">LARGE @ $4/hr × 14 hrs × 2 (idle time)</text>
+    
+    <rect x="70" y="170" width="260" height="50" fill="#FFCDD2" stroke="#D32F2F" stroke-width="1" rx="3"/>
+    <text x="90" y="190" font-size="12" fill="#333">Cortex API calls</text>
+    <text x="310" y="190" font-size="13" font-weight="bold" text-anchor="end" fill="#333">$50</text>
+    <text x="200" y="208" font-size="10" text-anchor="middle" fill="#666">500K queries × $0.0001</text>
+    
+    <rect x="70" y="230" width="260" height="50" fill="#FFCDD2" stroke="#D32F2F" stroke-width="1" rx="3"/>
+    <text x="90" y="250" font-size="12" fill="#333">Storage &amp; Compute</text>
+    <text x="310" y="250" font-size="13" font-weight="bold" text-anchor="end" fill="#333">$18</text>
+    <text x="200" y="268" font-size="10" text-anchor="middle" fill="#666">Intermediate results</text>
+    
+    <line x1="70" y1="295" x2="330" y2="295" stroke="#D32F2F" stroke-width="2"/>
+    <text x="90" y="315" font-size="14" font-weight="bold" fill="#D32F2F">Total Cost:</text>
+    <text x="310" y="315" font-size="16" font-weight="bold" text-anchor="end" fill="#D32F2F">$180</text>
+    <text x="200" y="332" font-size="10" text-anchor="middle" fill="#666">Per run</text>
+  </g>
+  
+  <!-- SPCS Approach -->
+  <g id="spcs-costs">
+    <rect x="450" y="60" width="300" height="280" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" rx="5"/>
+    <text x="600" y="90" font-size="15" font-weight="bold" text-anchor="middle" fill="#2E7D32">SPCS Approach</text>
+    
+    <rect x="470" y="110" width="260" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="1" rx="3"/>
+    <text x="490" y="130" font-size="12" fill="#333">Warehouse (1 hour)</text>
+    <text x="710" y="130" font-size="13" font-weight="bold" text-anchor="end" fill="#333">$4</text>
+    <text x="600" y="148" font-size="10" text-anchor="middle" fill="#666">LARGE @ $4/hr × 1 hr</text>
+    
+    <rect x="470" y="170" width="260" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="1" rx="3"/>
+    <text x="490" y="190" font-size="12" fill="#333">SPCS Compute Pool</text>
+    <text x="710" y="190" font-size="13" font-weight="bold" text-anchor="end" fill="#333">$16</text>
+    <text x="600" y="208" font-size="10" text-anchor="middle" fill="#666">HIGHMEM_X64_M × 1 hr</text>
+    
+    <rect x="470" y="230" width="260" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="1" rx="3"/>
+    <text x="490" y="250" font-size="12" fill="#333">Storage</text>
+    <text x="710" y="250" font-size="13" font-weight="bold" text-anchor="end" fill="#333">$5</text>
+    <text x="600" y="268" font-size="10" text-anchor="middle" fill="#666">Embeddings + results</text>
+    
+    <line x1="470" y1="295" x2="730" y2="295" stroke="#4CAF50" stroke-width="2"/>
+    <text x="490" y="315" font-size="14" font-weight="bold" fill="#2E7D32">Total Cost:</text>
+    <text x="710" y="315" font-size="16" font-weight="bold" text-anchor="end" fill="#2E7D32">$25</text>
+    <text x="600" y="332" font-size="10" text-anchor="middle" fill="#666">Per run</text>
+  </g>
+  
+  <!-- Savings annotation -->
+  <rect x="250" y="360" width="300" height="35" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" rx="5"/>
+  <text x="400" y="383" font-size="15" font-weight="bold" text-anchor="middle" fill="#E65100">💰 86% COST REDUCTION ($180 → $25)</text>
+</svg>
+

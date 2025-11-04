@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Title -->
+  <text x="400" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">SPCS Compute Pool Sizing Guide</text>
+  
+  <!-- Headers -->
+  <rect x="50" y="50" width="150" height="40" fill="#1A73E8" stroke="#0D47A1" stroke-width="2"/>
+  <text x="125" y="75" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Dataset Size</text>
+  
+  <rect x="200" y="50" width="180" height="40" fill="#1A73E8" stroke="#0D47A1" stroke-width="2"/>
+  <text x="290" y="75" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Instance Family</text>
+  
+  <rect x="380" y="50" width="120" height="40" fill="#1A73E8" stroke="#0D47A1" stroke-width="2"/>
+  <text x="440" y="75" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Memory</text>
+  
+  <rect x="500" y="50" width="100" height="40" fill="#1A73E8" stroke="#0D47A1" stroke-width="2"/>
+  <text x="550" y="75" font-size="14" font-weight="bold" text-anchor="middle" fill="white">CPUs</text>
+  
+  <rect x="600" y="50" width="150" height="40" fill="#1A73E8" stroke="#0D47A1" stroke-width="2"/>
+  <text x="675" y="75" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Est. Time (500K)</text>
+  
+  <!-- Row 1: Small -->
+  <rect x="50" y="90" width="150" height="50" fill="#E8F5E9" stroke="#999" stroke-width="1"/>
+  <text x="125" y="110" font-size="13" text-anchor="middle" fill="#333">100K - 500K</text>
+  <text x="125" y="128" font-size="11" text-anchor="middle" fill="#666">(Small)</text>
+  
+  <rect x="200" y="90" width="180" height="50" fill="#E8F5E9" stroke="#999" stroke-width="1"/>
+  <text x="290" y="120" font-size="12" text-anchor="middle" fill="#333">HIGHMEM_X64_S</text>
+  
+  <rect x="380" y="90" width="120" height="50" fill="#E8F5E9" stroke="#999" stroke-width="1"/>
+  <text x="440" y="120" font-size="12" text-anchor="middle" fill="#333">32 Gi</text>
+  
+  <rect x="500" y="90" width="100" height="50" fill="#E8F5E9" stroke="#999" stroke-width="1"/>
+  <text x="550" y="120" font-size="12" text-anchor="middle" fill="#333">4</text>
+  
+  <rect x="600" y="90" width="150" height="50" fill="#E8F5E9" stroke="#999" stroke-width="1"/>
+  <text x="675" y="120" font-size="12" text-anchor="middle" fill="#333">45-60 min</text>
+  
+  <!-- Row 2: Medium (Recommended) -->
+  <rect x="50" y="140" width="150" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="3"/>
+  <text x="125" y="160" font-size="13" font-weight="bold" text-anchor="middle" fill="#1B5E20">500K - 2M</text>
+  <text x="125" y="178" font-size="11" text-anchor="middle" fill="#2E7D32">(Recommended)</text>
+  
+  <rect x="200" y="140" width="180" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="3"/>
+  <text x="290" y="170" font-size="12" font-weight="bold" text-anchor="middle" fill="#1B5E20">HIGHMEM_X64_M</text>
+  
+  <rect x="380" y="140" width="120" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="3"/>
+  <text x="440" y="170" font-size="12" font-weight="bold" text-anchor="middle" fill="#1B5E20">64 Gi</text>
+  
+  <rect x="500" y="140" width="100" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="3"/>
+  <text x="550" y="170" font-size="12" font-weight="bold" text-anchor="middle" fill="#1B5E20">8</text>
+  
+  <rect x="600" y="140" width="150" height="50" fill="#C8E6C9" stroke="#4CAF50" stroke-width="3"/>
+  <text x="675" y="170" font-size="12" font-weight="bold" text-anchor="middle" fill="#1B5E20">30-45 min</text>
+  
+  <!-- Row 3: Large -->
+  <rect x="50" y="190" width="150" height="50" fill="#FFF9C4" stroke="#999" stroke-width="1"/>
+  <text x="125" y="210" font-size="13" text-anchor="middle" fill="#333">2M - 5M</text>
+  <text x="125" y="228" font-size="11" text-anchor="middle" fill="#666">(Large)</text>
+  
+  <rect x="200" y="190" width="180" height="50" fill="#FFF9C4" stroke="#999" stroke-width="1"/>
+  <text x="290" y="220" font-size="12" text-anchor="middle" fill="#333">HIGHMEM_X64_L</text>
+  
+  <rect x="380" y="190" width="120" height="50" fill="#FFF9C4" stroke="#999" stroke-width="1"/>
+  <text x="440" y="220" font-size="12" text-anchor="middle" fill="#333">128 Gi</text>
+  
+  <rect x="500" y="190" width="100" height="50" fill="#FFF9C4" stroke="#999" stroke-width="1"/>
+  <text x="550" y="220" font-size="12" text-anchor="middle" fill="#333">16</text>
+  
+  <rect x="600" y="190" width="150" height="50" fill="#FFF9C4" stroke="#999" stroke-width="1"/>
+  <text x="675" y="220" font-size="12" text-anchor="middle" fill="#333">60-90 min</text>
+  
+  <!-- Row 4: GPU Option -->
+  <rect x="50" y="240" width="150" height="50" fill="#E1BEE7" stroke="#999" stroke-width="1"/>
+  <text x="125" y="260" font-size="13" text-anchor="middle" fill="#333">Any (GPU)</text>
+  <text x="125" y="278" font-size="11" text-anchor="middle" fill="#666">(Optional)</text>
+  
+  <rect x="200" y="240" width="180" height="50" fill="#E1BEE7" stroke="#999" stroke-width="1"/>
+  <text x="290" y="270" font-size="12" text-anchor="middle" fill="#333">GPU_NV_M</text>
+  
+  <rect x="380" y="240" width="120" height="50" fill="#E1BEE7" stroke="#999" stroke-width="1"/>
+  <text x="440" y="270" font-size="12" text-anchor="middle" fill="#333">64 Gi</text>
+  
+  <rect x="500" y="240" width="100" height="50" fill="#E1BEE7" stroke="#999" stroke-width="1"/>
+  <text x="550" y="270" font-size="12" text-anchor="middle" fill="#333">8 + 1 GPU</text>
+  
+  <rect x="600" y="240" width="150" height="50" fill="#E1BEE7" stroke="#999" stroke-width="1"/>
+  <text x="675" y="270" font-size="12" text-anchor="middle" fill="#333">15-30 min</text>
+  
+  <!-- Recommendations box -->
+  <rect x="50" y="320" width="700" height="150" fill="#E3F2FD" stroke="#1A73E8" stroke-width="2" rx="5"/>
+  <text x="400" y="345" font-size="15" font-weight="bold" text-anchor="middle" fill="#1A73E8">Configuration Recommendations</text>
+  
+  <text x="70" y="375" font-size="12" fill="#333">✅ <tspan font-weight="bold">Start with HIGHMEM_X64_M</tspan> (64Gi, 8 CPUs) for 500K-2M records</text>
+  <text x="70" y="395" font-size="12" fill="#333">✅ <tspan font-weight="bold">Enable auto-scaling</tspan> (MIN_NODES=1, MAX_NODES=3) for variable workloads</text>
+  <text x="70" y="415" font-size="12" fill="#333">✅ <tspan font-weight="bold">Set AUTO_SUSPEND=600</tspan> (10 minutes) to minimize idle costs</text>
+  <text x="70" y="435" font-size="12" fill="#333">⚡ <tspan font-weight="bold">GPU acceleration</tspan> provides 2-3x speedup but costs more (evaluate ROI)</text>
+  <text x="70" y="455" font-size="12" fill="#333">💰 <tspan font-weight="bold">CPU-only is cost-effective</tspan> for most use cases at this scale</text>
+</svg>
+

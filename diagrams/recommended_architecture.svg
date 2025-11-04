@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Title -->
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Recommended: Hybrid Architecture with SPCS</text>
+  
+  <!-- Phase 1: Data Preparation -->
+  <g id="phase1">
+    <rect x="50" y="60" width="250" height="120" fill="#E3F2FD" stroke="#1A73E8" stroke-width="2" rx="5"/>
+    <text x="175" y="85" font-size="16" font-weight="bold" text-anchor="middle" fill="#1A73E8">Phase 1: Data Preparation</text>
+    <text x="175" y="110" font-size="13" text-anchor="middle" fill="#333">✅ Native Snowflake SQL</text>
+    <text x="175" y="130" font-size="12" text-anchor="middle" fill="#666">• Data cleaning</text>
+    <text x="175" y="145" font-size="12" text-anchor="middle" fill="#666">• Normalization</text>
+    <text x="175" y="160" font-size="12" text-anchor="middle" fill="#666">• Deduplication</text>
+  </g>
+  
+  <!-- Arrow to Phase 2 -->
+  <path d="M 175 180 L 175 220" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 2: Candidate Generation (SPCS) -->
+  <g id="phase2">
+    <rect x="50" y="220" width="800" height="200" fill="#FFF3E0" stroke="#F57C00" stroke-width="3" rx="5"/>
+    <text x="450" y="245" font-size="16" font-weight="bold" text-anchor="middle" fill="#E65100">Phase 2: Candidate Generation (SPCS) ⚡ SOLVES BOTTLENECK</text>
+    
+    <!-- SPCS Container -->
+    <rect x="80" y="260" width="350" height="140" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="5"/>
+    <text x="255" y="285" font-size="14" font-weight="bold" text-anchor="middle" fill="white">Snowpark Container Service</text>
+    
+    <!-- Vector Search Engine -->
+    <rect x="100" y="300" width="310" height="80" fill="#81C784" stroke="#2E7D32" stroke-width="1" rx="3"/>
+    <text x="255" y="325" font-size="13" font-weight="bold" text-anchor="middle" fill="#1B5E20">FAISS Vector Search Engine</text>
+    <text x="255" y="345" font-size="11" text-anchor="middle" fill="#1B5E20">• Load embeddings from Cortex/Stage</text>
+    <text x="255" y="360" font-size="11" text-anchor="middle" fill="#1B5E20">• Build HNSW index</text>
+    <text x="255" y="375" font-size="11" text-anchor="middle" fill="#1B5E20">• Bulk top-K search (500K in one batch)</text>
+    
+    <!-- Performance box -->
+    <rect x="470" y="270" width="350" height="130" fill="#C8E6C9" stroke="#2E7D32" stroke-width="2" rx="5"/>
+    <text x="645" y="295" font-size="14" font-weight="bold" text-anchor="middle" fill="#1B5E20">Performance Benefits</text>
+    <text x="645" y="320" font-size="12" text-anchor="middle" fill="#333">✅ ONE batch operation</text>
+    <text x="645" y="340" font-size="12" text-anchor="middle" fill="#333">✅ 500K queries → 30-60 minutes</text>
+    <text x="645" y="360" font-size="12" text-anchor="middle" fill="#333">✅ Distributed processing</text>
+    <text x="645" y="380" font-size="12" text-anchor="middle" fill="#333">✅ Minimal API overhead</text>
+  </g>
+  
+  <!-- Arrow to Phase 3 -->
+  <path d="M 450 420 L 450 460" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Phase 3: Feature Engineering & Scoring -->
+  <g id="phase3">
+    <rect x="600" y="460" width="250" height="120" fill="#E3F2FD" stroke="#1A73E8" stroke-width="2" rx="5"/>
+    <text x="725" y="485" font-size="16" font-weight="bold" text-anchor="middle" fill="#1A73E8">Phase 3: Scoring</text>
+    <text x="725" y="510" font-size="13" text-anchor="middle" fill="#333">✅ Native Snowflake SQL</text>
+    <text x="725" y="530" font-size="12" text-anchor="middle" fill="#666">• Calculate 25+ features</text>
+    <text x="725" y="545" font-size="12" text-anchor="middle" fill="#666">• Apply FERN model</text>
+    <text x="725" y="560" font-size="12" text-anchor="middle" fill="#666">• Cluster matches</text>
+  </g>
+  
+  <!-- Data flow annotation -->
+  <text x="450" y="450" font-size="11" font-style="italic" text-anchor="middle" fill="#666">Candidate pairs returned to Snowflake tables</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
+

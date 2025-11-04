@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Title -->
+  <text x="400" y="25" font-size="18" font-weight="bold" text-anchor="middle" fill="#333">Current Architecture: One-Call-Per-Record Bottleneck</text>
+  
+  <!-- Snowflake Warehouse -->
+  <rect x="50" y="50" width="200" height="300" fill="#29B5E8" stroke="#1A73E8" stroke-width="2" rx="5"/>
+  <text x="150" y="80" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Snowflake Warehouse</text>
+  
+  <!-- Records -->
+  <rect x="70" y="100" width="160" height="30" fill="#E3F2FD" stroke="#1A73E8" stroke-width="1" rx="3"/>
+  <text x="150" y="120" font-size="12" text-anchor="middle" fill="#333">Record 1</text>
+  
+  <rect x="70" y="140" width="160" height="30" fill="#E3F2FD" stroke="#1A73E8" stroke-width="1" rx="3"/>
+  <text x="150" y="160" font-size="12" text-anchor="middle" fill="#333">Record 2</text>
+  
+  <rect x="70" y="180" width="160" height="30" fill="#E3F2FD" stroke="#1A73E8" stroke-width="1" rx="3"/>
+  <text x="150" y="200" font-size="12" text-anchor="middle" fill="#333">Record 3</text>
+  
+  <text x="150" y="230" font-size="20" text-anchor="middle" fill="white">...</text>
+  
+  <rect x="70" y="250" width="160" height="30" fill="#E3F2FD" stroke="#1A73E8" stroke-width="1" rx="3"/>
+  <text x="150" y="270" font-size="12" text-anchor="middle" fill="#333">Record 500,000</text>
+  
+  <!-- Cortex Search Service -->
+  <rect x="550" y="125" width="200" height="150" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="5"/>
+  <text x="650" y="155" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Cortex Search</text>
+  <text x="650" y="180" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Service</text>
+  <text x="650" y="215" font-size="12" text-anchor="middle" fill="white">Fast Vector Index</text>
+  <text x="650" y="235" font-size="12" text-anchor="middle" fill="white">(HNSW)</text>
+  
+  <!-- Individual API Calls (arrows) -->
+  <g id="api-calls">
+    <path d="M 230 115 L 550 160" stroke="#FF5722" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="380" y="130" font-size="11" fill="#FF5722">API Call 1</text>
+    
+    <path d="M 230 155 L 550 180" stroke="#FF5722" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="380" y="165" font-size="11" fill="#FF5722">API Call 2</text>
+    
+    <path d="M 230 195 L 550 200" stroke="#FF5722" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="380" y="195" font-size="11" fill="#FF5722">API Call 3</text>
+    
+    <path d="M 230 265 L 550 220" stroke="#FF5722" stroke-width="2" fill="none" marker-end="url(#arrowred)"/>
+    <text x="380" y="240" font-size="11" fill="#FF5722">API Call 500K</text>
+  </g>
+  
+  <!-- Problem annotation -->
+  <rect x="280" y="310" width="240" height="60" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" rx="5"/>
+  <text x="400" y="330" font-size="13" font-weight="bold" text-anchor="middle" fill="#E65100">❌ BOTTLENECK</text>
+  <text x="400" y="350" font-size="11" text-anchor="middle" fill="#333">500K records = 500K API calls</text>
+  <text x="400" y="365" font-size="11" text-anchor="middle" fill="#333">Time: 14+ hours</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#FF5722"/>
+    </marker>
+  </defs>
+</svg>
+

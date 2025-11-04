@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <!-- Title -->
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">SPCS Container Architecture</text>
+  
+  <!-- Snowflake Tables/Stages -->
+  <g id="snowflake-storage">
+    <rect x="50" y="60" width="800" height="100" fill="#E3F2FD" stroke="#1A73E8" stroke-width="2" rx="5"/>
+    <text x="450" y="90" font-size="16" font-weight="bold" text-anchor="middle" fill="#1A73E8">Snowflake Tables &amp; Stages</text>
+    
+    <rect x="80" y="105" width="200" height="40" fill="#BBDEFB" stroke="#1A73E8" stroke-width="1" rx="3"/>
+    <text x="180" y="130" font-size="13" text-anchor="middle" fill="#333">Source Records</text>
+    
+    <rect x="350" y="105" width="200" height="40" fill="#BBDEFB" stroke="#1A73E8" stroke-width="1" rx="3"/>
+    <text x="450" y="130" font-size="13" text-anchor="middle" fill="#333">Embeddings (Parquet)</text>
+    
+    <rect x="620" y="105" width="200" height="40" fill="#BBDEFB" stroke="#1A73E8" stroke-width="1" rx="3"/>
+    <text x="720" y="130" font-size="13" text-anchor="middle" fill="#333">Candidate Pairs (Output)</text>
+  </g>
+  
+  <!-- Arrows down to SPCS -->
+  <path d="M 180 160 L 180 220" stroke="#1A73E8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M 450 160 L 450 220" stroke="#1A73E8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+  <text x="200" y="195" font-size="11" fill="#1A73E8">Load</text>
+  <text x="470" y="195" font-size="11" fill="#1A73E8">Load</text>
+  
+  <!-- Arrow up from SPCS -->
+  <path d="M 720 220 L 720 160" stroke="#4CAF50" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="740" y="195" font-size="11" fill="#4CAF50">Return</text>
+  
+  <!-- SPCS Container -->
+  <g id="spcs-container">
+    <rect x="50" y="220" width="800" height="420" fill="#37474F" stroke="#263238" stroke-width="3" rx="8"/>
+    <text x="450" y="250" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Snowpark Container Service (SPCS)</text>
+    
+    <!-- API Layer -->
+    <rect x="80" y="270" width="740" height="100" fill="#546E7A" stroke="#37474F" stroke-width="2" rx="5"/>
+    <text x="450" y="295" font-size="15" font-weight="bold" text-anchor="middle" fill="white">Flask/FastAPI Service Layer</text>
+    
+    <rect x="120" y="310" width="200" height="45" fill="#78909C" stroke="#455A64" stroke-width="1" rx="3"/>
+    <text x="220" y="330" font-size="12" font-weight="bold" text-anchor="middle" fill="white">GET /health</text>
+    <text x="220" y="347" font-size="10" text-anchor="middle" fill="#CFD8DC">Health check</text>
+    
+    <rect x="350" y="310" width="200" height="45" fill="#78909C" stroke="#455A64" stroke-width="1" rx="3"/>
+    <text x="450" y="330" font-size="12" font-weight="bold" text-anchor="middle" fill="white">POST /bulk_search</text>
+    <text x="450" y="347" font-size="10" text-anchor="middle" fill="#CFD8DC">Batch vector search</text>
+    
+    <rect x="580" y="310" width="200" height="45" fill="#78909C" stroke="#455A64" stroke-width="1" rx="3"/>
+    <text x="680" y="330" font-size="12" font-weight="bold" text-anchor="middle" fill="white">POST /refresh_index</text>
+    <text x="680" y="347" font-size="10" text-anchor="middle" fill="#CFD8DC">Rebuild index</text>
+    
+    <!-- FAISS Engine -->
+    <rect x="80" y="390" width="740" height="230" fill="#4CAF50" stroke="#2E7D32" stroke-width="2" rx="5"/>
+    <text x="450" y="420" font-size="16" font-weight="bold" text-anchor="middle" fill="white">FAISS Vector Search Engine</text>
+    
+    <!-- Components -->
+    <g id="faiss-components">
+      <!-- Embedding Loader -->
+      <rect x="110" y="440" width="200" height="80" fill="#66BB6A" stroke="#2E7D32" stroke-width="1" rx="3"/>
+      <text x="210" y="460" font-size="13" font-weight="bold" text-anchor="middle" fill="#1B5E20">Embedding Loader</text>
+      <text x="210" y="480" font-size="11" text-anchor="middle" fill="#1B5E20">• Read from Stage</text>
+      <text x="210" y="495" font-size="11" text-anchor="middle" fill="#1B5E20">• Parquet/Arrow format</text>
+      <text x="210" y="510" font-size="11" text-anchor="middle" fill="#1B5E20">• Memory mapping</text>
+      
+      <!-- Index Manager -->
+      <rect x="350" y="440" width="200" height="80" fill="#66BB6A" stroke="#2E7D32" stroke-width="1" rx="3"/>
+      <text x="450" y="460" font-size="13" font-weight="bold" text-anchor="middle" fill="#1B5E20">Index Manager</text>
+      <text x="450" y="480" font-size="11" text-anchor="middle" fill="#1B5E20">• HNSW index</text>
+      <text x="450" y="495" font-size="11" text-anchor="middle" fill="#1B5E20">• GPU acceleration</text>
+      <text x="450" y="510" font-size="11" text-anchor="middle" fill="#1B5E20">• Auto-refresh</text>
+      
+      <!-- Batch Search Engine -->
+      <rect x="590" y="440" width="200" height="80" fill="#66BB6A" stroke="#2E7D32" stroke-width="1" rx="3"/>
+      <text x="690" y="460" font-size="13" font-weight="bold" text-anchor="middle" fill="#1B5E20">Batch Search</text>
+      <text x="690" y="480" font-size="11" text-anchor="middle" fill="#1B5E20">• 10K-50K queries/batch</text>
+      <text x="690" y="495" font-size="11" text-anchor="middle" fill="#1B5E20">• Top-K neighbors</text>
+      <text x="690" y="510" font-size="11" text-anchor="middle" fill="#1B5E20">• Parallel execution</text>
+    </g>
+    
+    <!-- Storage -->
+    <rect x="110" y="540" width="680" height="60" fill="#81C784" stroke="#2E7D32" stroke-width="1" rx="3"/>
+    <text x="450" y="560" font-size="13" font-weight="bold" text-anchor="middle" fill="#1B5E20">Vector Storage</text>
+    <text x="450" y="580" font-size="11" text-anchor="middle" fill="#1B5E20">In-memory index | Optimized for similarity search | 10M+ vectors supported</text>
+  </g>
+  
+  <!-- Resource specs annotation -->
+  <rect x="620" y="650" width="250" height="40" fill="#FFF3E0" stroke="#F57C00" stroke-width="1" rx="3"/>
+  <text x="745" y="667" font-size="11" text-anchor="middle" fill="#333">Memory: 64Gi | CPU: 8 cores</text>
+  <text x="745" y="683" font-size="11" text-anchor="middle" fill="#333">GPU: 1x NVIDIA (optional)</text>
+  
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1A73E8"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4CAF50"/>
+    </marker>
+  </defs>
+</svg>
+
